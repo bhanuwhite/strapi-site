@@ -1,0 +1,37 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent" style="margin-top: 60px ;">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first" style="padding-top: 20px ;">
+      <h2>User Login</h2>
+      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" [(ngModel)]="loginText" name="login" placeholder="login">
+      <input type="password" id="password" class="fadeIn third" [(ngModel)]="passwordText" name="password"
+        placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+    </form>
+  </div>
+</div>
+
+<div style="display:flex;margin:auto;margin-left: 34%;">
+  <h6 style="margin-top: 25px;">Don't have an account yet?</h6><input type="submit" class="fadeIn fourth" value="Signup"
+    style="background:white;color:black;border: 1px solid blue;" (click)="Signup()">
+</div>
+
+<div style="display:flex;margin:auto;margin-left: 45%;">
+
+  <div type="submit" class="fadeIn fourth" value="Signup" (click)="googleLogin()"
+    style="background: white;color: black;border: 1px solid black;padding: 10px;">
+    <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+    Login with Google
+  </div>
+
+</div>
+
+<br><br>

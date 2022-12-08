@@ -1,0 +1,34 @@
+<div class="collapse navbar-collapse hover-dropdown font-14 ml-auto" id="h6-info">
+    <ul class="navbar-nav ml-auto  align-items-center">
+
+
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/dashboard">
+                Dashboard
+            </a>
+        </li>
+
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/blog">
+                Blog
+            </a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/about">
+                About
+            </a>
+        </li>
+
+        <!-- <li>
+            <span class="form-inline" id="language">
+                <select style="height: 45px;margin-left: 20px;" class="form-control" #selectedLang
+                    (change)="switchLang(selectedLang.value)">
+                    <option *ngFor="let language of translate" [value]="language.id">
+                        {{ language.name }}
+                    </option>
+                </select>
+            </span>
+        </li> -->
+    </ul>
+
+</div>

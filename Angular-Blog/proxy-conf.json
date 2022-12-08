@@ -1,0 +1,10 @@
+[
+{
+  "context": ["/api","/uploads"],
+  "target": "http://localhost:1337",
+  "secure": true,
+  "changeOrigin": true
+}
+]
+
+
