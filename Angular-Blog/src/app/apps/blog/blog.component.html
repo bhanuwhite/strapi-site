@@ -30,7 +30,8 @@
     <!-- Column -->
     <div class="col-md-4 wrap-feature1-box" *ngFor="let bl of blogsDetail">
 
-      <div class="card card-shadow" data-aos="fade-right" data-aos-duration="1200" style="width: 18rem;cursor: pointer;" (click)="viewDetail(bl.id)">
+      <div class="card card-shadow" data-aos="fade-right" data-aos-duration="1200" style="width: 18rem;cursor: pointer;"
+        (click)="viewDetail(bl.id)">
         <img class="card-img-top" src='{{bl.attributes.media.data.attributes.formats.small.url}}' alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{bl.attributes.title}}</h5>
@@ -42,3 +43,5 @@
     </div>
   </div>
 </div>
+
+<app-main-footer></app-main-footer>

@@ -1,0 +1,27 @@
+.main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card {
+    width: 100%;
+    height: auto;
+    background-color: #e2e2e2;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-banner {
+        flex-wrap: wrap;
+    }
+    .card {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.main-wrapper {
+    margin-top: 70px;
+}

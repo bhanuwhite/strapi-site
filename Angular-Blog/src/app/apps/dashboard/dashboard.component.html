@@ -1,38 +1,50 @@
-<div class="static-slider-head" style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
+<app-main-header></app-main-header>
+
+<!-- <div class="static-slider-head" 
+style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
   <div class="container">
-    <!-- Row  -->
+    Row 
     <div class="row justify-content-center">
-      <!-- Column -->
+      Column
       <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
         <h1 class="title">Angular Dashboard</h1>
         <h5 class="subtitle op-5">
         </h5>
       </div>
-      <!-- Column -->
+      Column
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- Row  -->
 
-  <div class="row" style="width: 90%;">
-    <div class="col-sm-4">
+
+<div class="main-wrapper pt-5">
+  <div class="main-banner">
+    <div class="card text-center">
       <app-pie-char></app-pie-char>
     </div>
-
-    <div class="col-sm-4">
+    <div class="card text-center">
       <app-bar-chart></app-bar-chart>
     </div>
-
-    <div class="col-sm-4">
+  </div>
+  <div class="main-banner">
+    <div class="card text-center">
       <app-multi-line-chart></app-multi-line-chart>
     </div>
-
-    <div  class="col-sm-4">
+    <div class="card text-center">
       <app-stacked-chart></app-stacked-chart>
     </div>
-
-    <div class="col-sm-4">
-      <app-donut-chart></app-donut-chart>
-    </div>
   </div>
+  <div class="main-banner">
+    <div class="card text-center">
+
+      <app-donut-chart></app-donut-chart>
+
+    </div>
+
+  </div>
+</div>
+
+
+<app-main-footer></app-main-footer>

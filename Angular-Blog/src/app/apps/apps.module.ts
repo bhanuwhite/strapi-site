@@ -34,6 +34,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { MultiLineChartComponent } from './multi-line-chart/multi-line-chart.component';
 import { StackedChartComponent } from './stacked-chart/stacked-chart.component';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
+import { MainFooterComponent } from './shared/main-footer/main-footer.component';
+import { MainHeaderComponent } from './shared/main-header/main-header.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { DonutChartComponent } from './donut-chart/donut-chart.component';
     BarChartComponent,
     MultiLineChartComponent,
     StackedChartComponent,
-    DonutChartComponent
+    DonutChartComponent,
+    MainFooterComponent,
+    MainHeaderComponent
   ],
   imports: [
     CommonModule,
