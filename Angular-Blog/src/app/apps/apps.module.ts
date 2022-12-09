@@ -36,6 +36,7 @@ import { StackedChartComponent } from './stacked-chart/stacked-chart.component';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { MainFooterComponent } from './shared/main-footer/main-footer.component';
 import { MainHeaderComponent } from './shared/main-header/main-header.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { MainHeaderComponent } from './shared/main-header/main-header.component'
     StackedChartComponent,
     DonutChartComponent,
     MainFooterComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,

@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
       { path: 'blogDetail/:id', component: BlogDetailComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactUsComponent },
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: RegisterComponent }
     ]

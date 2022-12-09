@@ -1,4 +1,4 @@
-<span style="display: flex;justify-content: end;position: relative;top: -70px;right: -100px;" class="form-inline" id="language">
+<span style="display: flex;justify-content: end;position: relative;top: -70px;" class="form-inline" id="language">
   <select class="form-control" #selectedLang
       (change)="switchLang(selectedLang.value)">
       <option *ngFor="let language of translate" [value]="language.id">
