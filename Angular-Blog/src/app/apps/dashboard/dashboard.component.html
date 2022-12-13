@@ -20,15 +20,30 @@ style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
 
 
 <div class="main-wrapper pt-5">
-  <div class="main-banner">
-    <div class="card text-center">
-      <app-pie-char></app-pie-char>
-    </div>
-    <div class="card text-center">
-      <app-bar-chart></app-bar-chart>
-    </div>
+  <div class="row" cdkDropList [cdkDropListData]="chartListOne" (cdkDropListDropped)="drop($event)">
+    <ng-container *ngFor="let item of chartListOne">
+      <div class="col-md-6">
+        <div class="card text-center" *ngIf="item==='chart1'" cdkDrag>
+          <app-pie-char></app-pie-char>
+        </div>
+        <div class="card text-center" *ngIf="item==='chart2'" cdkDrag>
+          <app-bar-chart></app-bar-chart>
+        </div>
+        <div class="card text-center" *ngIf="item==='chart3'" cdkDrag>
+          <app-multi-line-chart></app-multi-line-chart>
+        </div>
+        <div class="card text-center" *ngIf="item==='chart4'" cdkDrag>
+          <app-stacked-chart></app-stacked-chart>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="item==='chart5'">
+        <div class="card text-center sizing" *ngIf="item==='chart5'" cdkDrag>
+          <app-donut-chart></app-donut-chart>
+        </div>
+      </div>
+    </ng-container>
   </div>
-  <div class="main-banner">
+  <!-- <div class="main-banner">
     <div class="card text-center">
       <app-multi-line-chart></app-multi-line-chart>
     </div>
@@ -43,7 +58,7 @@ style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
 
     </div>
 
-  </div>
+  </div> -->
 </div>
 
 

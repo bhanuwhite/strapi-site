@@ -6,6 +6,7 @@ import { AppsRoutingModule } from './apps-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppsComponent } from './apps.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
@@ -23,6 +24,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
   GoogleLoginProvider,
@@ -37,6 +39,7 @@ import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { MainFooterComponent } from './shared/main-footer/main-footer.component';
 import { MainHeaderComponent } from './shared/main-header/main-header.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @NgModule({
@@ -71,7 +74,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    DragDropModule
   ],
   providers: [ServiceblogService,
     {
