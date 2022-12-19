@@ -10,28 +10,28 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   post(data: any) {
-    return this.http.post<any>("https://d631-157-38-46-64.ngrok.io/api/partners", data)
+    return this.http.post<any>("baseurl", data)
       .pipe(map((res: any) => {
         return res;
       }))
   }
 
   get() {
-    return this.http.get<any>("https://d631-157-38-46-64.ngrok.io/api/partners")
+    return this.http.get<any>("baseurl")
       .pipe(map((res: any) => {
         return res;
       }))
   }
 
   update(data: any, id: number) {
-    return this.http.put<any>("https://d631-157-38-46-64.ngrok.io/api/partners/" + id, data)
+    return this.http.put<any>("baseurl" + id, data)
       .pipe(map((res: any) => {
         return res;
       }));
   }
 
   delete(id: number) {
-    return this.http.delete<any>("https://d631-157-38-46-64.ngrok.io/api/partners/" + id)
+    return this.http.delete<any>("baseurl" + id)
       .pipe(map((res: any) => {
         return res;
       }));

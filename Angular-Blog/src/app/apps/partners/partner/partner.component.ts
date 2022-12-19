@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from './Api.service';
-import { Model } from './partner.module';
+import { Model } from './partner.model';
 
 
 @Component({
