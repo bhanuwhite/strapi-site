@@ -1,0 +1,48 @@
+<app-main-header></app-main-header>
+<div class="static-slider-head" style="background-image: url(assets/images/landingpage/banner-bg.jpg)">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <!-- Column -->
+      <div class="col-lg-9 col-md-6 align-self-center text-center no-trans">
+        <h1 class="title">Angular Blog</h1>
+        <h5 class="subtitle op-5">
+        </h5>
+      </div>
+      <!-- Column -->
+    </div>
+  </div>
+</div>
+
+<!-- Row  -->
+<div class="container spacer">
+  <div class="row justify-content-center">
+    <!-- Column -->
+    <div class="col-md-8 no-trans text-center">
+      <h2 class="title">Recent Blogs</h2>
+      <h6 class="subtitle">
+        You can relay on our amazing features list and also our customer
+        services will be great experience for you without doubt and in no-time
+      </h6>
+    </div>
+    <!-- Column -->
+  </div>
+  <div class="row m-t-40 justify-content-center">
+    <!-- Column -->
+    <div class="col-md-4 wrap-feature1-box" *ngFor="let bl of blogsDetail">
+
+      <div class="card card-shadow" data-aos="fade-right" data-aos-duration="1200" style="width: 18rem;cursor: pointer;"
+        (click)="viewDetail(bl.id)">
+        <img class="card-img-top" src='{{bl.attributes.media.data.attributes.formats.small.url}}' alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{bl.attributes.title}}</h5>
+          <p class="card-text">{{bl.attributes.content.substring(0, 50)}}</p>
+          <hr>
+          <b>{{bl.attributes.createdAt | date}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-main-footer></app-main-footer>
