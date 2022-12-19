@@ -1,7 +1,7 @@
 [
 {
   "context": ["/api","/uploads"],
-  "target": "https://7df0-157-38-115-23.ngrok.io",
+  "target": "https://1517-157-38-82-239.ngrok.io",
   "secure": true,
   "changeOrigin": true
 }

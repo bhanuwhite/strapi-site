@@ -40,6 +40,10 @@ import { MainFooterComponent } from './shared/main-footer/main-footer.component'
 import { MainHeaderComponent } from './shared/main-header/main-header.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { PartnerComponent } from './partners/partner/partner.component';
+import {TextFieldModule} from '@angular/cdk/text-field';
+
+
 
 
 @NgModule({
@@ -65,7 +69,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     DonutChartComponent,
     MainFooterComponent,
     MainHeaderComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PartnerComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -75,7 +81,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ReactiveFormsModule,
     HttpClientModule,
     SocialLoginModule,
-    DragDropModule
+    DragDropModule,
+    TextFieldModule
   ],
   providers: [ServiceblogService,
     {

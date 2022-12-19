@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "companyName": "test",
+      "domain": "test",
+      "ownedBy": "test",
+      "mobile": "test",
+      "addOn": "test"
+    },
+    {
+      "id": 2,
+      "companyName": "demo",
+      "domain": "demo",
+      "ownedBy": "demo",
+      "mobile": "0987654329",
+      "addOn": "demo"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
