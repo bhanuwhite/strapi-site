@@ -133,7 +133,6 @@
       }
     }
   },
-  "defaultProject": "blogApp",
   "cli": {
     "analytics": "332b7764-906b-4683-ae4c-235ed4298229"
   }

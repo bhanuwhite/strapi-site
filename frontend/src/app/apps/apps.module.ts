@@ -8,21 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppsComponent } from './apps.component';
-import { BlogComponent } from './blog/blog.component';
-import { AboutComponent } from './about/about.component';
-import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { AboutComponent } from './components/about/about.component';
+import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.component';
 
-import { ServiceblogService } from './blog/blog-service.service';
-import { RelayOnComponent } from './about/About-Components/relay-on/relay-on.component';
-import { TopContentComponent } from './about/About-Components/top-content/top-content.component';
+import { ServiceblogService } from './services/blog-service.service';
+import { RelayOnComponent } from './components/about/About-Components/relay-on/relay-on.component';
+import { TopContentComponent } from './components/about/About-Components/top-content/top-content.component';
 
 import { FullComponent } from './layout/full/full.component';
 
-import { BannerComponent } from './shared/banner/banner.component';
-import { BannerNavigationComponent } from './shared/banner-navigation/banner-navigation.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { BannerComponent } from './layout/banner/banner.component';
+import { BannerNavigationComponent } from './layout/banner-navigation/banner-navigation.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -30,17 +30,17 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from 'angularx-social-login';
-import { PieCharComponent } from './pie-char/pie-char.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { BarChartComponent } from './bar-chart/bar-chart.component';
-import { MultiLineChartComponent } from './multi-line-chart/multi-line-chart.component';
-import { StackedChartComponent } from './stacked-chart/stacked-chart.component';
-import { DonutChartComponent } from './donut-chart/donut-chart.component';
-import { MainFooterComponent } from './shared/main-footer/main-footer.component';
-import { MainHeaderComponent } from './shared/main-header/main-header.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { PieCharComponent } from './shared-components/pie-char/pie-char.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BarChartComponent } from './shared-components/bar-chart/bar-chart.component';
+import { MultiLineChartComponent } from './shared-components/multi-line-chart/multi-line-chart.component';
+import { StackedChartComponent } from './shared-components/stacked-chart/stacked-chart.component';
+import { DonutChartComponent } from './shared-components/donut-chart/donut-chart.component';
+import { MainFooterComponent } from './layout/main-footer/main-footer.component';
+import { MainHeaderComponent } from './layout/main-header/main-header.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { PartnerComponent } from './partners/partner/partner.component';
+import { PartnerComponent } from './components/partners/partner/partner.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
 
 
