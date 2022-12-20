@@ -19,10 +19,10 @@ export class PartnerComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      companyName: ["", [Validators.required, Validators.pattern ('?=[A-Z a-z]+$)^(?=.{8,}).*')]],
-      domain: ["", [Validators.required, Validators.pattern ('?=[A-Z a-z]+$)^(?=.{8,}).*')]],
-      owendBy: ["", [Validators.required, Validators.pattern ('?=[A-Z a-z]+$)^(?=.{8,}).*')]],
-      mobile: ["", [Validators.required, Validators.pattern(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/)]],
+      companyName: [""],
+      domain: [""],
+      owendBy: [""],
+      mobile: [""],
       addOn: [''],
     })
     this.getAll();

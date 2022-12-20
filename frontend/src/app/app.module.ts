@@ -104,4 +104,4 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     }
   ],
 })
-export class AppsModule { }
+export class AppModule { }
