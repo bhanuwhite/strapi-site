@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/apps/services/Api.service';
+import { ApiService } from 'src/app/services/Api.service';
 // import { ApiService } from './Api.service';
 import { Model } from './partner.model';
 
