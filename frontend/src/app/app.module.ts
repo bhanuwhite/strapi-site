@@ -37,37 +37,16 @@ import { DonutChartComponent } from './shared-components/donut-chart/donut-chart
 import { MainFooterComponent } from './layout/main-footer/main-footer.component';
 import { MainHeaderComponent } from './layout/main-header/main-header.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PartnerComponent } from './components/partners/partner/partner.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
+import { AppComponent } from './app.component';
 
 
 
 
 @NgModule({
   declarations: [
-    BlogComponent,
-    AboutComponent,
-    BlogDetailComponent,
-    RelayOnComponent,
-    TopContentComponent,
-    FullComponent,
-    BannerComponent,
-    // BannerContentComponent,
-    BannerNavigationComponent,
-    FooterComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    PieCharComponent,
-    BarChartComponent,
-    MultiLineChartComponent,
-    StackedChartComponent,
-    DonutChartComponent,
-    MainFooterComponent,
-    MainHeaderComponent,
-    ContactUsComponent,
-    PartnerComponent,
+   AppComponent
   
   ],
   imports: [
@@ -77,7 +56,6 @@ import {TextFieldModule} from '@angular/cdk/text-field';
     ReactiveFormsModule,
     HttpClientModule,
     SocialLoginModule,
-    DragDropModule,
     TextFieldModule
   ],
   providers: [ServiceblogService,
@@ -103,5 +81,6 @@ import {TextFieldModule} from '@angular/cdk/text-field';
       } as SocialAuthServiceConfig,
     }
   ],
+  bootstrap:[AppComponent]
 })
 export class AppModule { }

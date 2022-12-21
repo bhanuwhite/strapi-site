@@ -21,15 +21,15 @@ const routes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      { path: 'blog', component: BlogComponent },
-      { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
+      { path: 'blog', loadChildren:()=>import('./components/blog/blog.module').then((mod)=>mod.BlogModule) },
+      { path: 'dashboard', canActivate: [AuthGuard], loadChildren:()=>import('./components/dashboard/dashboard.module').then((mod)=>mod.DashboardModule) },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-      { path: 'blogDetail/:id', component: BlogDetailComponent },
-      { path: 'partner',component:PartnerComponent},
-      { path: 'about', component: AboutComponent },
-      { path: 'contact', component: ContactUsComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'signup', component: RegisterComponent }
+      { path: 'blogDetail/:id', loadChildren:()=>import('./components/blog/blog.module').then((mod)=>mod.BlogModule) },
+      { path: 'partner',loadChildren:()=>import('./components/partners/partner.module').then((mod)=>mod.PartnerModule)},
+      { path: 'about', loadChildren:()=>import('./components/about/about.module').then((mod)=>mod.AboutModule) },
+      { path: 'contact', loadChildren:()=>import('./components/contact-us/contact-us.module').then((mod)=>mod.ContactUsModule) },
+      { path: 'login', loadChildren:()=> import('./components/login/login.module').then ((mod)=>mod.LoginModule)},
+      { path: 'signup', loadChildren:()=> import('./components/register/register.module').then ((mod)=>mod.RegisterModule) }
     ]
   }
 ];
