@@ -11,28 +11,28 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   post(data: any) {
-    return this.http.post<any>(this.baseUrl, data)
+    return this.http.post<any>(this.baseUrl+'/partners', data)
       .pipe(map((res: any) => {
         return res;
       }))
   }
 
   get() {
-    return this.http.get<any>(this.baseUrl)
+    return this.http.get<any>(this.baseUrl + '/partners')
       .pipe(map((res: any) => {
         return res;
       }))
   }
 
   update(data: any, id: number) {
-    return this.http.put<any>(this.baseUrl + id, data)
+    return this.http.put<any>(this.baseUrl + '/partners/' + id, data)
       .pipe(map((res: any) => {
         return res;
       }));
   }
 
   delete(id: number) {
-    return this.http.delete<any>(this.baseUrl + id)
+    return this.http.delete<any>(this.baseUrl+'/partners/' + id)
       .pipe(map((res: any) => {
         return res;
       }));

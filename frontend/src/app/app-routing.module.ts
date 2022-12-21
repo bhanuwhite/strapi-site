@@ -1,18 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BlogComponent } from './components/blog/blog.component';
-import { AboutComponent } from './components/about/about.component';
-import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.component';
 
 
 import { FullComponent } from './layout/full/full.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth/auth.guard';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { PartnerComponent } from './components/partners/partner/partner.component';
 
 
 
@@ -35,8 +27,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
   providers: [AuthGuard]
 })
-export class AppsRoutingModule { }
+export class AppRoutingModule { }

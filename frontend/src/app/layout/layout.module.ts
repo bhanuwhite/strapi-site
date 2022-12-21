@@ -5,8 +5,8 @@ import { BannerNavigationComponent } from './banner-navigation/banner-navigation
 import { BannerComponent } from './banner/banner.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { FullComponent } from './full/full.component';
 
 
 
@@ -18,11 +18,11 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     MainFooterComponent,
     MainHeaderComponent,
+    FullComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    RouterModule
   ],
   exports: [
     BannerComponent,
@@ -31,6 +31,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     MainFooterComponent,
     MainHeaderComponent,
+    FullComponent
   ]
 })
 export class LayoutModule { }

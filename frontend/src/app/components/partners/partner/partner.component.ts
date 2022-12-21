@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/Api.service';
 // import { ApiService } from './Api.service';
 import { Model } from './partner.model';
@@ -15,7 +15,7 @@ export class PartnerComponent implements OnInit {
   EModelObj: Model = new Model();
   Data!: any;
 
-  constructor(private formbuilder: UntypedFormBuilder, private Api:ApiService) { }
+  constructor(private formbuilder: FormBuilder, private Api:ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
