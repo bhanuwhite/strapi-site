@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/Api.service';
+import { Partner } from './partner.model';
 // import { ApiService } from './Api.service';
-import { Model } from './partner.model';
 
 
 @Component({
@@ -12,27 +12,24 @@ import { Model } from './partner.model';
 })
 export class PartnerComponent implements OnInit {
   formValue!: UntypedFormGroup;
-  EModelObj: Model = new Model();
-  Data!: any;
+  allPrtners:Partner[] = [];
+  isformvalid=false;
+  selectedRowId: any;
 
   constructor(private formbuilder: FormBuilder, private Api:ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      companyName: [""],
-      domain: [""],
-      owendBy: [""],
-      mobile: [""],
-      addOn: [''],
+      Company_Name: ["",[Validators.required]],
+      Domain: ["",[Validators.required]],
+      Owned_By: ["",[Validators.required]],
+      Mobile: ["",[Validators.required, Validators.pattern(/^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[6789]\d{9}|(\d[ -]?){10}\d$/)],Validators.maxLength(10)],
+      Added_On: ['',[Validators.required]],
+      Description: ['',[Validators.required]],
     })
     this.getAll();
   }
   postDetails() {
-    // this.EModelObj.companyName = this.formValue.value.companyName;
-    // this.EModelObj.domain = this.formValue.value.domain;
-    // this.EModelObj.ownedBy = this.formValue.value.ownedBy;
-    // this.EModelObj.mobile = this.formValue.value.mobile;
-    // this.EModelObj.addOn = this.formValue.value.addOn;
     this.Api.post(this.formValue.value)
       .subscribe((res: any) => {
         console.log(res);
@@ -43,17 +40,25 @@ export class PartnerComponent implements OnInit {
         this.formValue.reset();
         this.getAll();
       },
-        (_err: any) => {
-          alert('something went wrong');
-        }
+        
       )
+      if(this.formValue.valid){
+        console.log(this.formValue);
+        
+        this.isformvalid=false;
+      }else{
+        this.isformvalid=true;
+      }
+      (_err: any) => {
+        alert('something went wrong');
+      }
   }
  
 
   getAll() {
     this.Api.get()
-      .subscribe((res: any) => {
-        this.Data = res;
+      .subscribe((res: Partner[]) => {
+        this.allPrtners = res;
       })
   }
 
@@ -66,7 +71,7 @@ export class PartnerComponent implements OnInit {
   }
 
 onEdit(row:any){
-  this.EModelObj.id=row.id;
+  this.selectedRowId = row.id
   this.formValue.controls['companyName'].setValue(row.companyName);
   this.formValue.controls['domain'].setValue(row.domain);
   this.formValue.controls['ownedBy'].setValue(row.ownedBy);
@@ -75,12 +80,8 @@ onEdit(row:any){
 }
 
 updateDetails(){
-  // this.EModelObj.companyName = this.formValue.value.companyName;
-  // this.EModelObj.domain = this.formValue.value.domain;
-  // this.EModelObj.ownedBy = this.formValue.value.ownedBy;
-  // this.EModelObj.mobile = this.formValue.value.mobile;
-  // this.EModelObj.addOn = this.formValue.value.addOn;
- let formData = {...this.formValue.value,id:this.EModelObj}
+ let formData = {...this.formValue.value,id:this.selectedRowId}
+ this.Api.update(formData, this.selectedRowId)
   .subscribe((res: any)=>{
     alert('updated successfully')
     let ref = document.getElementById('cancel')

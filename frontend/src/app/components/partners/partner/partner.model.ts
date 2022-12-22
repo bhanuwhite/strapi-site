@@ -1,8 +1,9 @@
-export class Model{
-    id:number=0;
-    companyName:string='';
-    domain:string='';
-    ownedBy:string='';
-    mobile:string='';
-    addOn:string='';
+export interface Partner{
+    id:number;
+    Company_Name:string;
+    Domain:string;
+    Owned_By:string;
+    Mobile:string;
+    Added_On:string;
+    Description:string;
 }
