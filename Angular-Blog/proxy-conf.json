@@ -1,7 +1,7 @@
 [
 {
   "context": ["/api","/uploads"],
-  "target": "https://7df0-157-38-115-23.ngrok.io",
+  "target": "http://localhost:1337",
   "secure": true,
   "changeOrigin": true
 }

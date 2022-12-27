@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "send_emails",
+  "info": {
+    "singularName": "send-email",
+    "pluralName": "send-emails",
+    "displayName": "send-email"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Email": {
+      "type": "email"
+    },
+    "Subject": {
+      "type": "text"
+    },
+    "Text": {
+      "type": "string"
+    }
+  }
+}
