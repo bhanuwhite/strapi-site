@@ -1,0 +1,110 @@
+<app-main-header></app-main-header>
+
+
+<div class="partner">
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container">
+            <div class="d-flex">
+                <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">+create Partner</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <table class="table table-bordered mt-5" style="width: 80%;margin-left: 80px;margin-right: 0px;">
+            <thead>
+                <tr>
+                    <th scope="col">Company name</th>
+                    <th scope="col">Domain</th>
+                    <th scope="col">ownedBy</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Add on</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of allPrtners">
+                    <!-- <td>{{row.id}}</td> -->
+                    <td>{{row.Company_Name}}</td>
+                    <td>{{row.Domain}}</td>
+                    <td>{{row.Owned_By}}</td>
+                    <td>{{row.Mobile}}</td>
+                    <td>{{row.Added_On}}</td>
+                    <td>{{row.Description}}</td>
+                    <td>
+                        <button class="btn btn-info" type="button" (click)="onEdit(row)" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Edit</button>
+                        <button class="btn btn-danger mx-3" (click)="delete(row)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="formValue">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" formControlName="Company_Name"
+                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <div *ngIf="(formValue.controls['Company_Name'].touched||isformvalid)&&formValue.get('Company_Name')?.hasError('required')"
+                                    style="color:red;">*company name is required</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Domain</label>
+                                <input type="text" class="form-control" formControlName="Domain"
+                                    id="exampleInputPassword1">
+                                    <div *ngIf="(formValue.controls['Domain'].touched||isformvalid)&&formValue.get('Domain')?.hasError('required')"
+                                    style="color:red;">*Domain is required</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">ownedBy </label>
+                                <input type="text" class="form-control" formControlName="Owned_By"
+                                    id="exampleInputPassword1">
+                                    <div *ngIf="(formValue.controls['Owned_By'].touched||isformvalid)&&formValue.get('Owned_By')?.hasError('required')"
+                                    style="color:red;">*Owned By is required</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Mobile</label>
+                                <input type="text" class="form-control" formControlName="Mobile"
+                                    id="exampleInputPassword1" maxlength="10">
+                                    <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('required')"
+                                    style="color:red;">*Mobile number is required</div>
+                                    <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('pattern')"
+                                    style="color:red;">*Invalid Mobile Number</div>
+                                   
+                                </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Add On</label>
+                                <textarea type="text" class="form-control" formControlName="Added_On"
+                                    id="exampleInputPassword1"></textarea>
+                                    <div *ngIf="(formValue.controls['Added_On'].touched||isformvalid)&&formValue.get('Added_On')?.hasError('required')"
+                                    style="color:red;">*addOn is required</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Description</label>
+                                <textarea type="text" class="form-control" formControlName="Description"
+                                    id="exampleInputPassword1"></textarea>
+                                    <!-- <div *ngIf="(formValue.controls['Description'].touched||isformvalid)&&formValue.get('Description')?.hasError('required')"
+                                    style="color:red;">* is required</div> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cancel" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+                        <button type="button" (click)="postDetails()" class="btn btn-primary">Add</button>
+                        <button type="button" id="cancel" (click)="updateDetails()"
+                            class="btn btn-primary">update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-main-footer></app-main-footer>
