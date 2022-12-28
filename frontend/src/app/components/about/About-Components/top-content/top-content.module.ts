@@ -16,7 +16,7 @@ const routes: Route[] = [
   ],
   imports: [
     CommonModule,
-    // LayoutModule,
+    LayoutModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)

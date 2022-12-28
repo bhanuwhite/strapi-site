@@ -25,7 +25,7 @@ export class ApiService {
   }
 
   update(data: any, id: number) {
-    return this.http.put<any>(this.baseUrl + '/partners/' + id, data)
+    return this.http.put<any>(this.baseUrl + '/partners/' +id, data)
       .pipe(map((res: any) => {
         return res;
       }));

@@ -36,8 +36,8 @@ export class RelayOnComponent implements OnInit {
   }
 
   getAboutUsData() {
-    this.service.get(`/api/members?populate=*`).subscribe((res: any) => {
-      this.membersData = res['data'];
-    })
+    // this.service.get(``).subscribe((res: any) => {
+    //   this.membersData = res['data'];
+    // })
   }
 }

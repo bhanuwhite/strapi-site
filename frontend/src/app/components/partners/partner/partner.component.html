@@ -10,30 +10,30 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container" style="max-width: 100%;">
         <table class="table table-bordered mt-5" style="width: 80%;margin-left: 80px;margin-right: 0px;">
             <thead>
                 <tr>
                     <th scope="col">Company name</th>
                     <th scope="col">Domain</th>
-                    <th scope="col">ownedBy</th>
+                    <th scope="col">OwnedBy</th>
                     <th scope="col">Mobile</th>
-                    <th scope="col">Add on</th>
+                    <th scope="col">Added On</th>
+                    <th scope="col">Description</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let row of allPrtners">
-                    <!-- <td>{{row.id}}</td> -->
-                    <td>{{row.Company_Name}}</td>
-                    <td>{{row.Domain}}</td>
-                    <td>{{row.Owned_By}}</td>
-                    <td>{{row.Mobile}}</td>
-                    <td>{{row.Added_On}}</td>
-                    <td>{{row.Description}}</td>
+                <tr *ngFor="let row of allPrtners; let i=index">
+                    <td>{{row.attributes.Company_Name}}</td>
+                    <td>{{row.attributes.Domain}}</td>
+                    <td>{{row.attributes.Owned_By}}</td>
+                    <td>{{row.attributes.Mobile}}</td>
+                    <td>{{row.attributes.Added_On}}</td>
+                    <td>{{row.attributes.Description}}</td>
                     <td>
                         <button class="btn btn-info" type="button" (click)="onEdit(row)" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">Edit</button>
-                        <button class="btn btn-danger mx-3" (click)="delete(row)">Delete</button>
+                        <button class="btn btn-danger mx-3" (click)="delete(row.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>
@@ -81,14 +81,14 @@
                                 </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Add On</label>
-                                <textarea type="text" class="form-control" formControlName="Added_On"
+                                <textarea class="form-control" formControlName="Added_On"
                                     id="exampleInputPassword1"></textarea>
                                     <div *ngIf="(formValue.controls['Added_On'].touched||isformvalid)&&formValue.get('Added_On')?.hasError('required')"
                                     style="color:red;">*addOn is required</div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Description</label>
-                                <textarea type="text" class="form-control" formControlName="Description"
+                                <textarea class="form-control" formControlName="Description"
                                     id="exampleInputPassword1"></textarea>
                                     <!-- <div *ngIf="(formValue.controls['Description'].touched||isformvalid)&&formValue.get('Description')?.hasError('required')"
                                     style="color:red;">* is required</div> -->
@@ -98,8 +98,8 @@
                     <div class="modal-footer">
                         <button type="button" id="cancel" class="btn btn-secondary"
                             data-bs-dismiss="modal">Close</button>
-                        <button type="button" (click)="postDetails()" class="btn btn-primary">Add</button>
-                        <button type="button" id="cancel" (click)="updateDetails()"
+                        <button *ngIf=!isUpadte type="button" (click)="postDetails()" class="btn btn-primary">Add</button>
+                        <button *ngIf=isUpadte type="button" id="cancel" (click)="updateDetails()"
                             class="btn btn-primary">update</button>
                     </div>
                 </div>
