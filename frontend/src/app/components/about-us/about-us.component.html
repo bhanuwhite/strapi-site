@@ -1,13 +1,12 @@
 <app-main-header></app-main-header>
 <div class="banner-innerpage" style="background-image: url(assets/images/landingpage/banner-bg2.jpg); margin-top: 80px;">
 </div>
-<div class="container">
-    <span>   
-       <h4>Employee details:</h4>
-    </span>
+<div class="container">  
+       <!-- <h6>Check for Employee details:</h6> -->
        <div class="main" (click)="dropdownopen()" >
          <span>  <img src="{{selectedUser.imgSrc}}" [alt]="selectedUser.name">{{selectedUser.name}}
          </span>
+
        </div>
        <div class="content" *ngIf="contentdropdown">
            <ul>
