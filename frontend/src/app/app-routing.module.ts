@@ -21,7 +21,9 @@ const routes: Routes = [
       { path: 'about', loadChildren:()=>import('./components/about/about.module').then((mod)=>mod.AboutModule) },
       { path: 'contact', loadChildren:()=>import('./components/contact-us/contact-us.module').then((mod)=>mod.ContactUsModule) },
       { path: 'login', loadChildren:()=> import('./components/login/login.module').then ((mod)=>mod.LoginModule)},
-      { path: 'signup', loadChildren:()=> import('./components/register/register.module').then ((mod)=>mod.RegisterModule) }
+      { path: 'signup', loadChildren:()=> import('./components/register/register.module').then ((mod)=>mod.RegisterModule) },
+      { path: 'about-us', loadChildren:()=> import('./components/about-us/about-us.module').then ((mod)=>mod.AboutusModule) }
+
     ]
   }
 ];

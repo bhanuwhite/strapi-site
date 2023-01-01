@@ -57,7 +57,7 @@ import { BrowserModule } from '@angular/platform-browser';
           }
         ],
         onError: (err) => {
-          console.error(err);
+          // console.error(err);
         }
       } as SocialAuthServiceConfig,
     }
