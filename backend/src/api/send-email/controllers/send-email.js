@@ -11,11 +11,13 @@ module.exports = createCoreController('api::send-email.send-email',
     ({ strapi }) => ({
         async exampleAction(ctx) {
 
+            const unparsedBody = await ctx.request.body;
+
             const msg = {
-                to: 'manglamsurelia1234@gmail.com', // Change to your recipient
+                to: `${unparsedBody.to}`, // Change to your recipient
                 from: 'manglamsurelia1234@gmail.com', // Change to your verified sender
-                subject: 'Sending with SendGrid is Fun',
-                text: 'and easy to do anywhere, even with Node.js',
+                subject: 'Please Contact Me',
+                text: `${unparsedBody.body}`,
             }
             let nodeM = nodemailer.createTransport({
                 service: 'gmail',
@@ -29,7 +31,7 @@ module.exports = createCoreController('api::send-email.send-email',
 
             let main = await nodeM.sendMail(msg);
             console.log(main);
-            ctx.body = 'ok'
+            ctx.body = 'Email Sucessfully Send'
 
         }
     })
