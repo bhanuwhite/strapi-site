@@ -23,7 +23,7 @@ module.exports = createCoreController('api::send-email.send-email',
                 service: 'gmail',
                 auth: {
                     user: 'manglamsurelia1234@gmail.com',
-                    pass: 'zkjfigapmokdxtae'
+                    pass: ''
                 },
                 port: 465,
                 host: 'smtp.gmail.com'
