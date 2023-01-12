@@ -15,14 +15,14 @@ module.exports = createCoreController('api::send-email.send-email',
 
             const msg = {
                 to: `${unparsedBody.to}`, // Change to your recipient
-                from: 'manglamsurelia1234@gmail.com', // Change to your verified sender
+                from: 'manglamshaurya1234@gmail.com', // Change to your verified sender
                 subject: 'Please Contact Me',
                 text: `${unparsedBody.body}`,
             }
             let nodeM = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: 'manglamsurelia1234@gmail.com',
+                    user: 'manglamshaurya1234@gmail.com',
                     pass: ''
                 },
                 port: 465,

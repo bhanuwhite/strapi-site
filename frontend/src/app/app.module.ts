@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { WorkshopModule } from './components/workshop/workshop.module';
 
 
 
@@ -37,7 +38,8 @@ import { BrowserModule } from '@angular/platform-browser';
     HttpClientModule,
     SocialLoginModule,
     TextFieldModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WorkshopModule
   ],
   providers: [ServiceblogService,
     {

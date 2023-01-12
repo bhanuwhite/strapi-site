@@ -1,0 +1,57 @@
+<app-main-header></app-main-header>
+<div class="banner-innerpage"
+    style="background-image: url(assets/images/landingpage/banner-bg2.jpg); min-height:400px ;">
+</div>
+
+<br>
+
+<div class="container">
+    <div style="margin-left: 50%;">
+        <b>List of workshop</b>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 card" *ngFor="let data of totalWorkshopDetails">
+            <div class="card-body">
+                <div style="display:flex;justify-content: space-between;">
+                    <h5 class="card-title">{{data.title}}</h5>
+                    <h5 class="card-title">Price: {{data.price}}</h5>
+                </div>
+                <p class="card-text">{{data.description}}</p>
+                <a (click)="cc(data)" class="btn btn-primary">Book</a>
+                <!-- <button type="button" class="SS_ProductCheckout btn btn-primary" data-id="1"
+                    data-url="http://localhost:1337"> Buy Now </button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="max-width: 100%;">
+    <table class="table table-bordered mt-5"
+        style="width: 80%;margin-left: 130px;margin-right: 0px; margin-bottom: 100px;">
+        <thead>
+            <tr>
+                <th scope="col">name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Availability</th>
+                <th scope="col">Status</th>
+                <th scope="col">Refund</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of tableData; let i=index">
+                <td>{{row.attributes.name}}</td>
+                <td>{{row.attributes.Email}}</td>
+                <td>{{row.attributes.availability}}</td>
+                <td>{{row.attributes.status}}</td>
+                <!-- <td>{{row.attributes.Added_On}}</td>
+                <td>{{row.attributes.Description}}</td> -->
+                <td>
+                    <button class="btn btn-info" type="button" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Refund</button>
+                    <!-- <button class="btn btn-danger mx-3" (click)="delete(row.id)">Delete</button> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

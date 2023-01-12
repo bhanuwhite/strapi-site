@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, UntypedFormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/Api.service';
 import { APIResponse, Partner, PartnerAttributes } from './partner.model';
 
@@ -16,7 +17,8 @@ export class PartnerComponent implements OnInit {
   selectedRowId: any;
   isUpadte: boolean = false;
 
-  constructor(private formbuilder: FormBuilder, private Api:ApiService) { }
+  constructor(private formbuilder: FormBuilder, private Api:ApiService) {
+   }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({

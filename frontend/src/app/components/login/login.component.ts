@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       this.service.get(`/api/auth/google/callback${this.locationVal['_platformLocation']['search']}`).subscribe((res) => {
         // console.log(res)
         localStorage.setItem('token', res.jwt);
+        localStorage.setItem('user', JSON.stringify(res.user));
         this.router.navigateByUrl('/blog');
       })
 
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
     }
     this.service.post('/api/auth/local', payLoad).subscribe((res: any) => {
       localStorage.setItem('token', res.jwt);
+      localStorage.setItem('user', JSON.stringify(res.user));
       this.router.navigateByUrl('/blog');
     })
 

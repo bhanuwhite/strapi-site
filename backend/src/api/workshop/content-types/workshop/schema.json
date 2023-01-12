@@ -4,7 +4,8 @@
   "info": {
     "singularName": "workshop",
     "pluralName": "workshops",
-    "displayName": "workshop"
+    "displayName": "workshop",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +15,19 @@
     "name": {
       "type": "string"
     },
-    "decription": {
-      "type": "text"
-    },
     "status": {
       "type": "string"
     },
     "availability": {
-      "type": "integer"
+      "type": "integer",
+      "max": 30,
+      "default": 30
+    },
+    "userId": {
+      "type": "biginteger"
+    },
+    "Email": {
+      "type": "email"
     }
   }
 }

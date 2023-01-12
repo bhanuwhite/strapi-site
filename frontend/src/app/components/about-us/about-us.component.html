@@ -1,36 +1,50 @@
 <app-main-header></app-main-header>
-<div class="banner-innerpage" style="background-image: url(assets/images/landingpage/banner-bg2.jpg); margin-top: 80px;">
+<div class="banner-innerpage"
+  style="background-image: url(assets/images/landingpage/banner-bg2.jpg); margin-top: 80px;">
 </div>
-<div class="container">  
-       <!-- <h6>Check for Employee details:</h6> -->
-       <div class="main" (click)="dropdownopen()" >
-         <span>  <img src="{{selectedUser.imgSrc}}" [alt]="selectedUser.name">{{selectedUser.name}}
-         </span>
 
-       </div>
-       <div class="content" *ngIf="contentdropdown">
-           <ul>
-               <li *ngFor="let arr of employeearray" (click)="changecode(arr)">
-                   <img src="{{arr.imgSrc}}" alt="{{arr.name}}"/>
-                   {{arr.name}}
-               </li>
-           </ul>
-       </div>
-   </div>
+<div class="container">
+  <div class="row" *ngFor="let data of aboutUs">
+    <div class="col-sm-4">
+      <img src='{{data.attributes["about_img"].data.attributes.formats.large.url}}' alt="wrapkit" class="img-fluid" />
+    </div>
+    <div class="col-sm-8">
+      <b>{{data['attributes']['title']}}</b>
+      <br>
+      <div>{{data['attributes']['content']}}</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- <h6>Check for Employee details:</h6> -->
+  <div class="main" (click)="dropdownopen()">
+    <span> <img src="{{selectedUser.photo.data.attributes.url}}" [alt]="selectedUser.name">{{selectedUser.name}}
+    </span>
+
+  </div>
+  <div class="content" *ngIf="contentdropdown">
+    <ul>
+      <li *ngFor="let arr of employeearray" (click)="changecode(arr)">
+        <img src="{{arr.attributes.photo.data.attributes.url}}" alt="{{arr.attributes.name}}" />
+        {{arr.attributes.name}}
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="header">
-    <div class="title" >
+  <div class="title">
     <h1>{{selectedUser.name}}</h1>
     <div class="img" style="display:flex; justify-content: space-evenly; align-items: centers;">
-    <img src="{{selectedUser.imgSrc}}" [alt]="selectedUser.name" height="300px" width="300px" border-radius="10px">
-    <p>{{selectedUser.content}}</p>
+      <img src="{{selectedUser.photo.data.attributes.url}}" [alt]="selectedUser.name" height="300px" width="300px" border-radius="10px">
+      <p>{{selectedUser.description}}</p>
     </div>
-    </div>
+  </div>
 </div>
 
 
 
-     
 
 
 
@@ -63,7 +77,8 @@
 
 
 
-    <!-- <div class="dropdown">
+
+<!-- <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Employee list
         </button>
@@ -72,8 +87,7 @@
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div> -->
-      <!-- </div> -->
+<!-- </div> -->
 
 
 <app-main-footer></app-main-footer>
-
