@@ -1,37 +1,49 @@
-<div class="wrapper fadeInDown">
-  <div id="formContent" style="margin-top: 60px ;">
-    <!-- Tabs Titles -->
+<!-- <div class="wrapper fadeInDown">
+    <div id="formContent" style="margin-top: 60px ;">
 
-    <!-- Icon -->
-    <div class="fadeIn first" style="padding-top: 20px ;">
-      <h2>User Login</h2>
-      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+        <div class="fadeIn first" style="padding-top: 20px ;">
+            <h2>User Login</h2>
+
+        </div>
+
+
+        <form>
+            <input type="text" id="login" class="fadeIn second" [(ngModel)]="loginText" name="login" placeholder="login">
+            <input type="password" id="password" class="fadeIn third" [(ngModel)]="passwordText" name="password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+        </form>
     </div>
-
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" [(ngModel)]="loginText" name="login" placeholder="login">
-      <input type="password" id="password" class="fadeIn third" [(ngModel)]="passwordText" name="password"
-        placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
-    </form>
-  </div>
 </div>
 
 <div style="display:flex;margin:auto;margin-left: 34%;">
-  <h6 style="margin-top: 25px;">Don't have an account yet?</h6><input type="submit" class="fadeIn fourth" value="Signup"
-    style="background:white;color:black;border: 1px solid blue;" (click)="Signup()">
+    <h6 style="margin-top: 25px;">Don't have an account yet?</h6><input type="submit" class="fadeIn fourth" value="Signup" style="background:white;color:black;border: 1px solid blue;" (click)="Signup()">
 </div>
 
 <div style="display:flex;margin:auto; justify-content: center;">
 
-  <div type="submit" class="fadeIn fourth" value="Signup" (click)="googleLogin()"
-    style="background: white;color: black;border: 1px solid black;padding: 10px; border-radius: 8px;">
-    <img width="20px" alt="Google sign-in"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+    <div type="submit" class="fadeIn fourth" value="Signup" (click)="googleLogin()" style="background: white;color: black;border: 1px solid black;padding: 10px; border-radius: 8px;">
+        <img width="20px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
 
-  </div>
+    </div>
 
 </div>
 
-<br><br>
+<br><br> -->
+<div class="login-wrapper">
+    <div class="login-form">
+        <h2 class="heading">Login</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter User name" [(ngModel)]="loginText" name="login">
+            </div>
+            <div class="input-group">
+                <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="passwordText" name="password">
+                <span>Forgot Password?</span>
+            </div>
+            <button class="btn primary-button" (click)="login()">Login</button>
+            <h5>Don't have an account yet? <button class="btn sign-up">Sign Up</button></h5>
+            <p class="or-text">OR</p>
+            <button class="btn google-button"><img src="../../../assets/images/google-icon.png"> Sign in with Google</button>
+        </form>
+    </div>
+</div>
