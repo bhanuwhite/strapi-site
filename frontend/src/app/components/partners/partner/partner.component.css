@@ -1,3 +1,69 @@
-.partner{
-    margin-top:70px;
+.partner {
+    margin-top: 70px;
+    margin-left: -75px;
+    margin-right: -75px;
+}
+
+.partners-table table th {
+    border-top: 1px solid rgba(231, 234, 243, .7);
+    border-bottom: 0px;
+    background-color: #f8fafd;
+    font-size: 14px;
+    color: #677788;
+}
+
+.partners-table table td {
+    font-size: 14px;
+    color: #677788;
+}
+
+.options-icon {
+    cursor: pointer;
+}
+
+.action-block {
+    position: relative;
+    display: inline-block;
+}
+
+.action-menu {
+    position: absolute;
+    right: -75px;
+    top: 0px;
+    display: none;
+    list-style-type: none;
+    background: #f8fafd;
+    padding: 0px 0px;
+}
+
+.action-block:hover .action-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-menu li {
+    padding: 5px 15px;
+}
+
+.action-menu li a {
+    color: #677788;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.action-menu li:hover {
+    background-color: #3f51b5;
+}
+
+.action-menu li:hover a {
+    color: #fff !important;
+}
+
+.primary-button {
+    background-color: #3f51b5;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
 }

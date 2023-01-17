@@ -2,110 +2,105 @@
 
 <div class="banner-innerpage" style="background-image: url(assets/images/landingpage/banner-bg2.jpg); min-height:400px ;">
 </div>
-<div class="partner">
-    <nav class="navbar navbar-light">
-        <div class="container">
-            <div class="d-flex">
-                <button class="btn btn-success" type="button" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">+Create Partner</button>                    
-            </div>
+<div class="container">
+    <div class="partner">
+        <div class="d-flex justify-content-end">
+            <button class="btn primary-button"><i class="fa fa-plus"></i> Create Partner</button>
         </div>
-    </nav>
-    <div class="container" style="max-width: 100%;">
-        <table class="table table-bordered mt-5" style="width: 80%;margin-left: 130px;margin-right: 0px; margin-bottom: 100px;">
-            <thead>
-                <tr>
-                    <th scope="col">Company name</th>
-                    <th scope="col">Domain</th>
-                    <th scope="col">OwnedBy</th>
-                    <th scope="col">Mobile</th>
-                    <th scope="col">Added On</th>
-                    <th scope="col">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let row of allPrtners; let i=index">
-                    <td>{{row.attributes.Company_Name}}</td>
-                    <td>{{row.attributes.Domain}}</td>
-                    <td>{{row.attributes.Owned_By}}</td>
-                    <td>{{row.attributes.Mobile}}</td>
-                    <td>{{row.attributes.Added_On}}</td>
-                    <td>{{row.attributes.Description}}</td>
-                    <td>
-                        <button class="btn btn-info" type="button" (click)="onEdit(row)" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Edit</button>
-                        <button class="btn btn-danger mx-3" (click)="delete(row.id)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="partners-table inner-row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Company name</th>
+                        <th scope="col">Domain</th>
+                        <th scope="col">OwnedBy</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Added On</th>
+                        <th scope="col">Description</th>
+                        <th scope="col"> &nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of allPrtners; let i=index">
+                        <td>{{row.attributes.Company_Name}}</td>
+                        <td>{{row.attributes.Domain}}</td>
+                        <td>{{row.attributes.Owned_By}}</td>
+                        <td>{{row.attributes.Mobile}}</td>
+                        <td>{{row.attributes.Added_On}}</td>
+                        <td>{{row.attributes.Description}}</td>
+                        <td>
+                            <div class="action-block">
+                                <img src="/assets/images/options.svg" class="options-icon" />
+                                <ul class="action-menu">
+                                    <li><a href="">Edit</a></li>
+                                    <li><a href="">Delete</a></li>
+                                </ul>
+                            </div>
+
+                        </td>
+                        <!-- <td>
+                            <button class="btn btn-info" type="button" (click)="onEdit(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                            <button class="btn btn-danger mx-3" (click)="delete(row.id)">Delete</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" formControlName="Company_Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div *ngIf="(formValue.controls['Company_Name'].touched||isformvalid)&&formValue.get('Company_Name')?.hasError('required')" style="color:red;">*company name is required</div>
                     </div>
-                    <div class="modal-body">
-                        <form [formGroup]="formValue">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" formControlName="Company_Name"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    <div *ngIf="(formValue.controls['Company_Name'].touched||isformvalid)&&formValue.get('Company_Name')?.hasError('required')"
-                                    style="color:red;">*company name is required</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Domain</label>
-                                <input type="text" class="form-control" formControlName="Domain"
-                                    id="exampleInputPassword1">
-                                    <div *ngIf="(formValue.controls['Domain'].touched||isformvalid)&&formValue.get('Domain')?.hasError('required')"
-                                    style="color:red;">*Domain is required</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">ownedBy </label>
-                                <input type="text" class="form-control" formControlName="Owned_By"
-                                    id="exampleInputPassword1">
-                                    <div *ngIf="(formValue.controls['Owned_By'].touched||isformvalid)&&formValue.get('Owned_By')?.hasError('required')"
-                                    style="color:red;">*Owned By is required</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Mobile</label>
-                                <input type="text" class="form-control" formControlName="Mobile"
-                                    id="exampleInputPassword1" maxlength="10">
-                                    <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('required')"
-                                    style="color:red;">*Mobile number is required</div>
-                                    <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('pattern')"
-                                    style="color:red;">*Invalid Mobile Number</div>
-                                   
-                                </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Add On</label>
-                                <textarea class="form-control" formControlName="Added_On"
-                                    id="exampleInputPassword1"></textarea>
-                                    <div *ngIf="(formValue.controls['Added_On'].touched||isformvalid)&&formValue.get('Added_On')?.hasError('required')"
-                                    style="color:red;">*addOn is required</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Description</label>
-                                <textarea class="form-control" formControlName="Description"
-                                    id="exampleInputPassword1"></textarea>
-                                    <!-- <div *ngIf="(formValue.controls['Description'].touched||isformvalid)&&formValue.get('Description')?.hasError('required')"
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Domain</label>
+                        <input type="text" class="form-control" formControlName="Domain" id="exampleInputPassword1">
+                        <div *ngIf="(formValue.controls['Domain'].touched||isformvalid)&&formValue.get('Domain')?.hasError('required')" style="color:red;">*Domain is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">ownedBy </label>
+                        <input type="text" class="form-control" formControlName="Owned_By" id="exampleInputPassword1">
+                        <div *ngIf="(formValue.controls['Owned_By'].touched||isformvalid)&&formValue.get('Owned_By')?.hasError('required')" style="color:red;">*Owned By is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Mobile</label>
+                        <input type="text" class="form-control" formControlName="Mobile" id="exampleInputPassword1" maxlength="10">
+                        <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('required')" style="color:red;">*Mobile number is required</div>
+                        <div *ngIf="(formValue.controls['Mobile'].touched||isformvalid)&&formValue.get('Mobile')?.hasError('pattern')" style="color:red;">*Invalid Mobile Number</div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Add On</label>
+                        <textarea class="form-control" formControlName="Added_On" id="exampleInputPassword1"></textarea>
+                        <div *ngIf="(formValue.controls['Added_On'].touched||isformvalid)&&formValue.get('Added_On')?.hasError('required')" style="color:red;">*addOn is required</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Description</label>
+                        <textarea class="form-control" formControlName="Description" id="exampleInputPassword1"></textarea>
+                        <!-- <div *ngIf="(formValue.controls['Description'].touched||isformvalid)&&formValue.get('Description')?.hasError('required')"
                                     style="color:red;">* is required</div> -->
-                            </div>
-                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" id="cancel" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                        <button *ngIf=!isUpadte type="button" (click)="postDetails()" class="btn btn-primary">Add</button>
-                        <button *ngIf=isUpadte type="button" id="cancel" (click)="updateDetails()"
-                            class="btn btn-primary">update</button>
-                    </div>
-                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button *ngIf=!isUpadte type="button" (click)="postDetails()" class="btn btn-primary">Add</button>
+                <button *ngIf=isUpadte type="button" id="cancel" (click)="updateDetails()" class="btn btn-primary">update</button>
             </div>
         </div>
     </div>
 </div>
+
 <app-main-footer></app-main-footer>

@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+	<title>dots</title>
+	<defs>
+		<image  width="6" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAUBAMAAABc/FHrAAAAAXNSR0IB2cksfwAAAC1QTFRFZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIZ3eIgAxQ6wAAAA90Uk5TAC2lDOn/6DMLLKQllpWUA3N8sQAAADNJREFUeJxjYFQSYDAJTWYoDQ1nMAvNYODUmsAAB7sZGHhCLzBsDY0GY97QB2AxGMCiFwA9Ew6gv5duTQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="9" y="2"/>
+</svg>

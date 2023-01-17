@@ -1,0 +1,14 @@
+.news-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.date {
+    font-size: 14px;
+    color: #677788;
+    margin: 8px 10px
+}
+
+.date i {
+    margin-right: 8px;
+}
